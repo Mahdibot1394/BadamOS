@@ -43,10 +43,27 @@ namespace BadamOS
             UI.NextLineRestore();
             Console.Write("> ");
             var input = Console.ReadLine();
-            Console.Write("Text typed: ");
-            Console.WriteLine(input);
-            UI.Element app;
-            
+            switch (input)
+            {
+                default:
+                    Commands.invalid;
+                case "help":
+                    Commands.help(); break;
+                case "clear":
+                    Commands.clear(); break;
+                case "version":
+                    Commands.version(); break;
+                case "about":
+                    Commands.about(); break;
+                case "poweroff": 
+                    Commands.poweroff(); break;
+                case "reboot":
+                    Commands.reboot(); break;
+                case "": 
+                    break;
+
+            }
+
         }
 
     }
