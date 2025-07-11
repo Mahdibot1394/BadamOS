@@ -46,7 +46,7 @@ namespace BadamOS
             switch (input)
             {
                 default:
-                    Commands.invalid;
+                    Commands.invalid(); break;
                 case "help":
                     Commands.help(); break;
                 case "clear":
