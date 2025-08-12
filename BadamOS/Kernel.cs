@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.IO;
 using BadamOS;
 using Cosmos.Common;
 using Cosmos.Core;
@@ -12,35 +14,31 @@ using Cosmos.Debug;
 using Cosmos.HAL;
 using Cosmos.System.Graphics;
 using Cosmos.System.Graphics.Fonts;
-using static BadamOS.UI;
+using Cosmos.System.FileSystem;
 using Sys = Cosmos.System;
-
+using Cosmos.System.FileSystem.VFS;
+using System.IO.Enumeration;
 namespace BadamOS
 {
+    
     public class Kernel : Sys.Kernel
     {
+        
+        public CosmosVFS fs = new CosmosVFS();
 
         protected override void BeforeRun()
         {
-             Console.Clear();
-             UI.RunMessage();
-            UI.DefaultLook();
-            Element loginButton = new Element();
-            loginButton.Type = "Button";
-            loginButton.Text = "Enter";
-
-            App.Provide(loginButton);
-            App.ShowContent();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
+            VFSManager.RegisterVFS(fs);
+            Console.WriteLine("BadamOS Booted ...");
+            Console.WriteLine("Go>"); Console.ReadLine();
+            Commands.clear();
 
         }
 
         protected override void Run()
         {
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            UI.NextLineRestore();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("> ");
             var input = Console.ReadLine();
             switch (input)
@@ -59,6 +57,7 @@ namespace BadamOS
                     Commands.poweroff(); break;
                 case "reboot":
                     Commands.reboot(); break;
+                    break;
                 case "": 
                     break;
 

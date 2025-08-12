@@ -34,6 +34,11 @@ namespace BadamOS
         {
             Cosmos.System.Power.Reboot();
         }
+        public static void OpenApp()
+        {
+            Console.WriteLine("Open? > "); Console.ReadLine();
+            Console.Write("Helllo World!");
+        }
         public static void invalid()
         {
             Console.ForegroundColor = ConsoleColor.White;

@@ -1,7 +1,7 @@
 ﻿# BadamOS |  Ascii UI Iranian Operating System 
 ----------------------------------------------
 **BadamOS** is a lightweight, modular operating system written in C# using the [Cosmos](https://gocosmos.org/) framework.  
-It is designed as an IRANIAN(I love my country) Operating System, terminal emulation, and working on a custom programming language called **Badamshakan** that comming soon.
+It is designed as an IRANIAN(I love my country) Operating System, terminal emulation, and working on a custom programming language called **Badamshakan** that coming soon.
 
 ---
 
@@ -27,10 +27,10 @@ button.text = "Button";
 ```
 ## 🔨 BadamShakan 
 
-BadamOS is making a Single-Platform Programming language named ***BadamShakan**. This Programming language is some diffrent with normal programming standards like when you want you type **Hello World** in python is lie this : 
+BadamOS is making a Single-Platform Programming language named **BadamShakan**. This Programming language is some diffrent with normal programming standards like when you want you type **Hello World** in python is like this :  
 `print("Hello World")`
-But in BadamShakan : 
+But in BadamShakan :  
 `Show("Hello world ")`
-And if you want to show this text on a ascii window :
+And if you want to show this text on a ascii window :  
 `Display(Show("Hello World"))`
 

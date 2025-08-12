@@ -31,26 +31,26 @@ namespace BadamOS
             Console.BackgroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("================================================================================");
+            Console.WriteLine("============================================================");
         }
         public static void Endline()
         {
-            Console.WriteLine("================================================================================");
+            Console.WriteLine("============================================================");
         }
         public static void RunMessage()
         {
             Console.WriteLine("BadamOS UI Boot Successfully : " + Variables.Version);
         }
         
-public class Element
+        public class Element
         {
             public static Dictionary<string, string> ElementTypes = new Dictionary<string, string>()
-    {
-        {"Text", "--"},
+            {
+        {"Text", "  "},
         {"Button", "[]"},
         {"Input", "||"},
-        {"Frame", "{}"}
-    };
+
+            };
 
             public string Type = "";
             public string Text = "";
@@ -70,30 +70,27 @@ public class Element
         }
 
 
-        public static class App
+        public class App
         {
+            public const int size = 10;
             public static string Content = "";
 
-            public static void Provide(Element element)
+            public void Provide(Element element)
             {
                 Content += element.Content + "\n";
             }
 
-            public static void ShowContent()
+            public void ShowContent()
             {
-                Console.Clear();
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.ForegroundColor = ConsoleColor.Black;
-                
-                Console.WriteLine("================================================================================");
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("+---------------------------------------------------+");
+                for (int i = 0; i < size; i++)
+                {
+                    Console.WriteLine("|                                                   |");
+                }
+                Console.WriteLine("+---------------------------------------------------+");
+                Console.SetCursorPosition(2,2);
                 Console.WriteLine(Content);
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("================================================================================");
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.SetCursorPosition(2, 3);
             }
         }
 
