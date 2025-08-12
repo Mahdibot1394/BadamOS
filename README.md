@@ -27,7 +27,7 @@ button.text = "Button";
 ```
 ## BadamShakan 
 
-BadamOS is making a Single-Platform Programming language named ***BadamShakan**. This Programming language is some diffrent with normal programming standards like when you want you type **Hello World** in python is lie this : 
+BadamOS is making a Single-Platform Programming language named ***BadamShakan**. This Programming language is some diffrent with normal programming standards like when you want you type **Hello World** in python is like this : 
 `print("Hello World")`
 But in BadamShakan : 
 `Show("Hello world ")`
