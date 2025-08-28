@@ -23,7 +23,6 @@ namespace BadamOS
     
     public class Kernel : Sys.Kernel
     {
-        
         public CosmosVFS fs = new CosmosVFS();
 
         protected override void BeforeRun()
@@ -57,6 +56,31 @@ namespace BadamOS
                     Commands.poweroff(); break;
                 case "reboot":
                     Commands.reboot(); break;
+                case "makebadamfile":
+                    var available_space = fs.GetAvailableFreeSpace(@"0:\");
+                    Console.WriteLine("Available Free Space: " + available_space);
+                    var fs_type = fs.GetFileSystemType(@"0:\");
+                    Console.WriteLine("File System Type: " + fs_type);
+                    var files_list = Directory.GetFiles(@"0:\");
+                    try
+                    {
+
+                        Console.Write("FileName");
+                        var FileName = Console.ReadLine();
+                        var file_stream = File.Create(@"0:\" + FileName);
+                        foreach (var file in files_list)
+                        {
+                            Console.WriteLine(file);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.ToString());
+                    }
+                    break;
+                case "makebadambotoxt":
+                    Console.WriteLine("Badam OS - Nano Editor Test");
+                    Apps.Botoxt.Run();
                     break;
                 case "": 
                     break;
